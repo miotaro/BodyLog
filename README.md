@@ -20,4 +20,3 @@
 
 - belongs_to :user
 
-postgresql://bodylog_production_user:JZGmUYzssrH9TK7q6CAYvtlWcr5n8KEN@dpg-cuu6nq0gph6c73ab0o3g-a/bodylog_production
