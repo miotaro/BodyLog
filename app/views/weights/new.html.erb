@@ -1,0 +1,7 @@
+<div class="new_today_weight">
+  <%= form_with model: @weight, url: weights_path, class: 'new_weight_regist', local: true do |f| %>
+
+    <%= render partial: "weight", locals: { weight: @weight , f: f } %>
+
+  <% end %>
+</div>

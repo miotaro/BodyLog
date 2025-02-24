@@ -1,0 +1,375 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+/*ヘッダー・フッダー*/
+
+body {
+  background-color: hotpink;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  }
+
+.header__bar_row { 
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, #ff69b4, #ff1493); /* グラデーション */
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.titlelogo {
+  padding-left: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.user_nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.user_image {
+  margin-right: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+}
+
+.user__nav {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.user__info {
+  display: none;
+  font-size: 20px;
+}
+
+.user__info li {
+  list-style: none;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.user__info li:hover{
+  background-color: #ff69b4;
+}
+
+.user_nav:hover .user__info {
+  display: block;
+}
+
+footer {
+  text-align: right;
+  padding-right: 30px;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+/*トップページ index*/
+
+.all_contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  height: 100vh;
+}
+
+.today_contents {
+  width: 525px;
+  margin-bottom: 30px;
+}
+
+.today {
+  font-size: 20px;
+}
+
+.today_weight {
+  font-size: 30px;
+  color: black;
+  background: white;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  text-align: center;
+}
+
+.today__weight {
+  font-weight: bold;
+}
+
+.weight_goal {
+  font-size: 15px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.weight__goal {
+  font-weight: bold;
+}
+
+.calc_contents {
+  margin-bottom: 30px;
+  list-style: none;
+  text-align: center;
+}
+
+.calc_weights {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  text-align: center;
+}
+
+.calc__weights {
+  font-weight: bold;
+}
+
+.post_contents {
+  background-color: white;
+  height: 600px;
+  width: 400px;
+  overflow: auto;
+  border-radius: 9px;
+}
+
+.post_contents_title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.post_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post_weight {
+  width: 400px;
+}
+
+.weight_link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_weight p {
+  padding: 10px 50px;
+  font-size: 15px;
+}
+
+/*体重登録ページ new*/
+
+.new_today_weight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+.new_title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.new_weight {
+  text-align: center;
+  font-size: 30px;
+}
+
+.new_weight_action {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.new_bmi {
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.delete_weight {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  color: blue;
+}
+
+.delete_weight:hover {
+  color: darkblue;
+  text-decoration: underline; 
+}
+
+/*ユーザー新規登録・ログイン画面*/
+
+.contents_row {
+  text-align: center;
+  height: 100vh;
+}
+
+.change_sign {
+  margin: 10px 20px 0 0;
+  text-align: right;
+}
+
+.container {
+  margin: 20px 0;
+}
+
+.container h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.image_field {
+  font-size: 15px;
+}
+
+.preview-image {
+  height: 150px;
+  width: 150px;
+}
+
+.field {
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+.actions {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+/*エラ〜メッセージ　ユーザー*/
+
+.error-alert {
+  background-color: white;
+  border: 5px solid red;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  list-style: none;
+}
+
+/*タブレット表示*/
+@media (max-width: 1024px) {
+  .user_nav {
+    margin-right: 100px;
+  }
+  .new_weight_regist {
+    margin-top: 50px;
+  }
+}
+
+/*スマホ表示*/
+@media (max-width: 599px) {
+  .titlelogo{
+    font-size: 40px;
+    padding-left: 5px;
+  }
+
+  .user_image {
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .user__nav {
+    font-size: 30px;
+  }
+
+  .user_nav {
+    margin-right: 15px;
+  }
+
+  .today_contents {
+    width: 450px;
+  }
+
+  
+  .change_sign {
+    margin: 10px 20px 0 0;
+    text-align: right;
+  }
+  
+  .container h2 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .image_field {
+    font-size: 10px;
+  }
+  
+  .preview-image {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .field {
+    font-size: 20px;
+  }
+  
+  .actions {
+    font-size: 15px;
+  }
+
+  /*体重登録ページ new*/
+
+  .new_title {
+    font-size: 30px;
+  }
+
+  .new_weight {
+    font-size: 20px;
+  }
+
+  .new_weight_action {
+    font-size: 20px;
+  }
+
+  .new_bmi {
+    font-size: 15px;
+  }
+
+  .delete_weight {
+    font-size: 10px;
+  }
+}

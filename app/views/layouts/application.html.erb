@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BodyLog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <% if user_signed_in? %>
+      <script>
+        const userHeight = <%= current_user.height %>;
+        const weightMark = <%= current_user.mark %>
+      </script>
+    <% else %>
+      <script>
+        const userHeight = 0;
+        const weightMark = 0;
+      </script>
+    <% end %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__bar_row">
+        <% if user_signed_in? %>
+        <h1 class="titlelogo"><a href="/">♡BodyLog♡</a></h1>
+          <div class="user_nav">
+            <%= image_tag current_user.image, class: "user_image" if current_user.image.attached? %>
+            <span class="user__nav"><%= current_user.name %></span>
+            <ul class="user__info">
+              <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+              <li><%= link_to "体重の記録", new_weight_path %></li>
+              <li><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></li>
+            </ul>
+          </div>
+        <% else %>
+        <h1 class="titlelogo"><a>♡BodyLog♡</a></h1>
+        <% end %>
+      </div>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+      <p>
+        Copyright BodyLog 2025.
+      </p>
+    </footer>
+  </body>
+</html>

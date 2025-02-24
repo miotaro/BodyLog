@@ -1,0 +1,20 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+            email:
+              blank: "メールアドレスを入力してください"
+            password:
+              blank: "パスワードを入力してください"
+            height:
+              blank: "身長を入力してください"
+    messages:
+      blank: "を入力してください"

@@ -1,0 +1,11 @@
+<div class="new_today_weight">
+  <%= form_with model: @weight, url: weight_path, class: 'new_weight_regist', local: true do |f| %>
+  
+    <%= render partial: "weight", locals: { weight: @weight , f: f } %>
+
+  <% end %>
+</div>
+
+<div class="delete_weight">
+  <%= link_to "削除する", "/weights/#{@weight.id}", data: { turbo_method: :delete } %>
+</div>

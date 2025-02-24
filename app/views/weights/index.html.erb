@@ -1,0 +1,55 @@
+<div class="all_contents">
+  <div class="today_contents">
+    <div class="today"><%= Date.today.strftime('%Y/%m/%d') %></div>
+    <div class="today_weight">
+      <p>今日の体重は…　
+        <span class="today__weight" id="today__weight"><%= Weight.where(user_id: current_user.id).order(created_at: :desc).limit(1).pluck(:weight).first %>
+        </span>　kg
+      </p>
+      <div class="weight_goal">
+        目標まで　<span class="weight__goal" id="weight__goal"></span>　kg
+      </div>
+    </div>
+  </div>
+  <ul class="calc_contents">
+    <li class="calc_weights">
+      <p>昨日から　　　<span class="calc__weights" id="changes_yesterday"></span>　kg</p>
+    </li>
+    <li class="calc_weights">
+      <p>一ヶ月前から　<span class="calc__weights" id="changes_month"></span>　kg</p>
+    </li>
+    <li class="calc_weights">
+      <p>半年前から　　<span class="calc__weights" id="changes_half"></span>　kg</p>
+    </li>
+    <li class="calc_weights">
+      <p>一年前から　　<span class="calc__weights" id="changes_year"></span>　kg</p>
+    </li>
+  </ul>
+  <div class="post_contents">
+    <div class="post_contents_title">過去の記録</div>
+    <div class="post_content">
+      <% @weights.each do |weight| %>
+        <div class="post_weight">
+          <%= link_to edit_weight_path(weight.id), class: "weight_link" do %>
+            <p><%= l weight.created_at %></p><p><%= weight.weight%>　kg</p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <script>
+    const pastWeights = {
+      yesterday: parseFloat("<%= Weight.where(user_id: current_user.id).where("created_at < ?", Date.today).order(created_at: :desc).limit(1).pluck(:weight).first || 'NaN' %>"),
+      month: parseFloat("<%= Weight.where(user_id: current_user.id).where("created_at < ?", 1.month.ago).order(created_at: :desc).limit(1).pluck(:weight).first || 'NaN' %>"),
+      halfYear: parseFloat("<%= Weight.where(user_id: current_user.id).where("created_at < ?", 6.months.ago).order(created_at: :desc).limit(1).pluck(:weight).first || 'NaN' %>"),
+      year: parseFloat("<%= Weight.where(user_id: current_user.id).where("created_at < ?", 1.year.ago).order(created_at: :desc).limit(1).pluck(:weight).first || 'NaN' %>")
+    };
+  </script>
+<% else %>
+  <script>
+    const pastWeights = 0;
+  </script>
+<% end %>

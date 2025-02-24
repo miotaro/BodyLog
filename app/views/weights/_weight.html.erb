@@ -1,0 +1,11 @@
+  <div class="new_title">今日の体重は？？</div>
+    <div class="new_weight">
+      <%= f.text_field :weight, placeholder: "体重", id: 'bmi_weight' %>
+    </div>
+    <div class="new_bmi">
+      BMIは<span class="new_bmi_calc" id="bmi_display"></span>
+      <%= f.hidden_field :bmi, id: 'bmi_field' %>です
+    </div>
+    <div class="new_weight_action">
+      <%= f.submit "登録" %>
+    </div>
